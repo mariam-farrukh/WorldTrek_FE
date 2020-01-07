@@ -31,36 +31,43 @@ const Login = props => {
     };
 
     return(
-        <Form onSubmit={event => handleSubmit(event)}>
-            <Form.Group>
-                <Form.Input
-                    label="Username"
-                    name="username"
-                    type="text"
-                    value={user.username}
-                    onChange={event => handleChange(event)}
+        <div className="container">
+        <div className="userForm">
+            <h1>Login</h1>
+            <div className="enterform">
+                <Form onSubmit={event => handleSubmit(event)}>
+                    <Form.Group>
+                        <Form.Input
+                            label="Username"
+                            name="username"
+                            type="text"
+                            value={user.username}
+                            onChange={event => handleChange(event)}
 
-                />
-            </Form.Group>
-            <Form.Group>
-                <Form.Input
-                    label="Password"
-                    name="password"
-                    type="password"
-                    value={user.password}
-                    onChange={event => handleChange(event)}
-                    
-                />
-            </Form.Group>
-            <Button
-                type="submit"
-                postive
-                icon="checkmark"
-                labelPosition="right"
-                content="Login"
-            />
-            <Link to="/register">don't have an account?</Link>
-        </Form>
+                        />
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Input
+                            label="Password"
+                            name="password"
+                            type="password"
+                            value={user.password}
+                            onChange={event => handleChange(event)}
+                            
+                        />
+                    </Form.Group>
+                    <Button
+                        type="submit"
+                        postive
+                        icon="checkmark"
+                        // labelPosition="right"
+                        content="Login"
+                    />
+                    <Link to="/register">don't have an account?</Link>
+                </Form>
+                </div>
+            </div>
+        </div>
     )
 }
 

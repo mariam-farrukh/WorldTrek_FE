@@ -1,0 +1,46 @@
+body{
+    margin: 0px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #02353C;
+
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.userForm {
+    background-color: #C1F6ED;
+    box-shadow: 0 13px 10px 15px rgba(63, 208, 201, 0.2);
+    width: 400px;
+    height: auto;
+    border-radius: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    padding-bottom: 1.5em;
+}
+.userForm h1{
+    width: 100%;
+}
+.userForm .enterform {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 0.5em;
+}
+
+.userForm Form {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    width: 10vw;
+    
+    .item {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}

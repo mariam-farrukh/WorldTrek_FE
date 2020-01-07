@@ -33,6 +33,10 @@ const RegisterForm = props => {
     };
 
     return(
+        <div className="container">
+        <div className="userForm">
+            <h1>Sign Up</h1>
+            <div className="enterform">
         <Form onSubmit={event => handleSubmit(event)}>
             <Form.Group>
                 <Form.Input
@@ -81,6 +85,9 @@ const RegisterForm = props => {
             />
             <Link to="/login">already have an account?</Link>
         </Form>
+        </div>
+        </div>
+        </div>
     )
 }
 
