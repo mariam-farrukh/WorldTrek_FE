@@ -5,10 +5,12 @@ import GameMap from './gamemap';
 import RoomInfo from './roomInfo';
 import Controls from './control';
 
+import './game.scss'
+
 const Game = prop => {
 
     return (
-        <div>
+        <div className="game-container">
             <div className="game-map">
                 <GameMap />
             </div>

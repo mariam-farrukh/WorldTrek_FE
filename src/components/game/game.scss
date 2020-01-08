@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap');
+
+
+.game-container{
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    
+     .game-map{
+        border: 1px solid darkgreen;
+        width: 80%;
+        height: 100vh;
+
+            .map{
+                border: 1px solid green;
+    
+            }
+    }
+
+    .side-panel{
+        border: 1px solid darkorange;
+        width: 20%;
+        height: 100vh;
+
+            .room-info{
+                border: 1px solid purple;
+                height: 60%;
+            }
+
+            .controls{
+                // border: 1px solid red;
+                height: 40%;
+                display: flex;
+                justify-content: space-between;
+                background-color: #000000;
+                font-family: 'Baloo Bhai', cursive;
+                font-size: 30px;
+
+
+                .panel{
+                    // border: 1px solid black;
+                    width: 100%;
+                }
+                .left-button{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .north-south-buttons{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 20px 0 20px 0;
+                }
+                .right-button{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .buttons{
+                    color: #c1f6ed;
+                    background-color: #02343c;
+                    border: 1px solid #c1f6ed;
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                }
+                .buttons:hover{
+                    color: #000000;
+                    background-color: #808080;
+                    border: 1px solid black;
+                }
+            }
+    }
+}
+
+
+
+
+
