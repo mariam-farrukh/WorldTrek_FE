@@ -58,7 +58,7 @@ const Login = props => {
                     </Form.Group>
                     <Button
                         type="submit"
-                        postive
+                        // postive
                         icon="checkmark"
                         // labelPosition="right"
                         content="Login"

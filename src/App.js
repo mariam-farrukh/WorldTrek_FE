@@ -3,6 +3,7 @@ import {Route} from 'react-router-dom';
 import logo from './logo.svg';
 import Register from './components/Register';
 import Login from './components/Login';
+import Game from './components/game/game.js'
 import './App.css';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <div className="App">
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
+      <Route path="/game" component={Game} />
     </div>
   );
 }

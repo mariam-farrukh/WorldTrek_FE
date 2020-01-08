@@ -16,9 +16,9 @@ const RegisterForm = props => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        axios.post("https://funtimes-dreamteam.herokuapp.com/registration", user)
+        axios.post("https://funtimes-dreamteam.herokuapp.com/api/registration/", user)
             .then(res => {
-                console.log(res)
+                console.log(user)
                 localStorage.setItem('key', res.data.key)
                 props.history.push("/game") //this should be the link to the game
             })
@@ -60,7 +60,7 @@ const RegisterForm = props => {
             <Form.Group>
                 <Form.Input
                     label="Password"
-                    name="password"
+                    name="password1"
                     type="password"
                     value={user.password1}
                     onChange={event => handleChange(event)}
@@ -70,7 +70,7 @@ const RegisterForm = props => {
             <Form.Group>
                 <Form.Input
                     label="Confirm Password"
-                    name="password"
+                    name="password2"
                     type="password"
                     value={user.password2}
                     onChange={event => handleChange(event)}
@@ -79,7 +79,7 @@ const RegisterForm = props => {
             </Form.Group>
             <Button
                 type="submit"
-                postive
+                // postive
                 labelPosition="right"
                 content="Sign Up"
             />
