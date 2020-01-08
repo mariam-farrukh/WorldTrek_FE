@@ -1,13 +1,12 @@
 import React from 'react';
 
-const RoomInfo = props => {
+const RoomInfo = () => {
     // const {title, description} = props.current
 
     return(
         <div className="room-info">
-            <h2>Location: </h2>
-            {/* <h3>{title}</h3>
-            <h3>{description}</h3> */}
+            <h2>Room 001</h2>
+            <p>this is a placeholder for actual story content description of the room</p>
         </div>
     )
 

@@ -8,25 +8,44 @@
     justify-content: space-between;
     height: 100vh;
     
+    .navBar{
+        border: 1px solid red;
+    }
      .game-map{
-        border: 1px solid darkgreen;
+        // border: 1px solid darkgreen;
         width: 80%;
         height: 100vh;
+        background-color: black;
 
-            .map{
-                border: 1px solid green;
-    
+            .full-map{
+                display: flex;
+                justify-content: center;
+                height: 100vh;
+                align-items: center;
+                
             }
     }
 
     .side-panel{
-        border: 1px solid darkorange;
         width: 20%;
         height: 100vh;
+        border: 1px dashed #c1f6ed;
 
             .room-info{
-                border: 1px solid purple;
-                height: 60%;
+                height: 50%;
+                background-color: black;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                h2 {
+                    color: #c1f6ed;
+                    height: 25%;
+                }
+
+                p{
+                    color: #c1f6ed;
+                    height: 25%;
+                }
             }
 
             .controls{
@@ -78,10 +97,24 @@
                     border: 1px solid black;
                 }
             }
+            .LogOut{
+                height: 10%;
+                background-color: #000000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .button{
+                    background-color: #02343c;
+                    color: #c1f6ed;
+                    padding: 10px 30px;
+                    
+                }
+            }
     }
 }
 
-
-
+// .full-map{
+//     padding:50px;
+// }
 
 
