@@ -35,15 +35,16 @@ const GameMap = props => {
     // const RoomPaths = () => {
     //     const
     // }
-    let pointList = []
-    const Points = () => {
+    // const Ponits = () => {
+        // let pointList = []
         
-        roomState && roomState.map(obj => {
-            pointList.push(obj.x)
-            pointList.push(obj.y)
-            console.log(pointList)
-        })
-    }
+        // roomState && roomState.map(obj => {
+        //     pointList.push(obj.x)
+        //     pointList.push(obj.y)
+        //     console.log(pointList)
+        // })
+    // }
+
 
     return(
         <div className="full-map">
@@ -59,17 +60,12 @@ const GameMap = props => {
                     shadowBlur={10}
                     />
                 })}
-                {/* {pointList.length && pointList.map(point => {
-                    return(
-                        
-                    )
-                })} */}
-                {/* {pointList.length && <Line
-                points={pointList}
-                x={20}
-                y={200} 
-                stroke="yellow"
-                />} */}
+                {/* <Rect
+                    // points={pointList}
+                    x={pointList.x}
+                    y={pointList.y} 
+                    fill="pink"
+                /> */}
             </Layer>
         </Stage>
         </div>
