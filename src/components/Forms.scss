@@ -36,11 +36,40 @@ body{
 .userForm Form {
     display: flex;
     flex-direction: column;
-    // align-items: center;
     width: 10vw;
     
     .item {
         display: flex;
         justify-content: space-evenly;
+    }
+    input{
+        width: 15.5em;
+        padding-left:0.4em;
+        height: 1.5em;
+        border-radius: 3px;
+        border: 0.5px solid rgb(211,211,211);
+        background-color: rgb(245,245,245)
+    }
+    p{
+        font-size: .7em;
+    }
+    button{
+        font-size: 0.9em;
+        margin-top: 0.5em;
+        width: 7em;
+        height: 2.25em;
+        border: none;
+        border-radius: 7px;
+        background-color: #02353C;
+        color: rgb(245,245,245);
+        border: 0.1em solid rgba(211,211,211, 0.15);
+    }
+
+    button:hover{
+        color: black;
+        background-color: #808080;
+        border: 0.1em solid #C1F6ED;
+        cursor: pointer;
+        transition: 0.3s
     }
 }
