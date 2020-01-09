@@ -16,7 +16,7 @@ import {Stage, Layer, Rect} from 'react-konva'
 // }
 
 const GameMap = props => {
-    const { playerInfo , setPlayerInfo} = props;
+    // const { playerInfo , setPlayerInfo} = props;
     const [roomState, setRoomState] = useState();
     // const [userState, setUserState] = useState({currentroom})
 
@@ -30,30 +30,14 @@ const GameMap = props => {
                 console.log(err)
             })
     },[])
-
-    // useEffect(()=>{
-    //     if(playerInfo){
-    //     }
-    // },[playerInfo])
-    // const RoomPaths = () => {
-    //     const
-    // }
-    // const Ponits = () => {
-        // let pointList = []
-        
-        // roomState && roomState.map(obj => {
-        //     pointList.push(obj.x)
-        //     pointList.push(obj.y)
-        //     console.log(pointList)
-        // })
-    // }
-
-
     return(
+    
         <div className="full-map">
+            {props.playerInfo?
         <Stage width={500} height={500} >
             <Layer>
-                {roomState && roomState.map((room)=>{
+                {
+                roomState && roomState.map((room)=>{
                     if (room.id === props.playerInfo.roomID) {
                         // console.log(props.playerInfo)
                      return <Rect
@@ -62,7 +46,7 @@ const GameMap = props => {
                         y={room.y*50}
                         width={20}
                         height={20} 
-                        fill="blue"
+                        fill="#E09A30"
                     /> 
                     }
                    return <Rect
@@ -76,7 +60,8 @@ const GameMap = props => {
                 })}
  
             </Layer>
-        </Stage>
+        </Stage>: <p>loading</p>
+         }
         </div>
     )
 

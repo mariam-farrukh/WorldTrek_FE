@@ -41,14 +41,17 @@ const [playerInfo, setPlayerInfo] = useState(null)
     useEffect(() => {
         axiosWithAuth().get("https://funtimes-dreamteam.herokuapp.com/api/adv/init/")
             .then(res => {
-                // console.log('Resonse from initial game load',res.data)
-                setPlayerInfo(res.data)
-
+                console.log('RoomID on first load: ',res.data)
+                 setPlayerInfo(res.data)
             })
             .catch(err => {
                 console.log(err)
             })
+        
     }, [])
+    useEffect(()=>{
+        console.log("State of playerInfo", playerInfo)
+    },[playerInfo])
     
     return(
         <div className="game-container">

@@ -83,7 +83,7 @@ const RegisterForm = props => {
                 labelPosition="right"
                 content="Sign Up"
             />
-            <Link to="/login">already have an account?</Link>
+            <Link to="/">already have an account?</Link>
         </Form>
         </div>
         </div>
