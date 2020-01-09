@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import {axiosWithAuth} from '../utils/axiosWithAuth.js'
 import Konva from 'konva';
 import {Stage, Layer, Rect, Path, Line} from 'react-konva'
 
@@ -21,7 +22,7 @@ const GameMap = props => {
     // const [userState, setUserState] = useState({currentroom})
 
     useEffect(() => {
-         axios.get('https://funtimes-dreamteam.herokuapp.com/api/rooms/')
+         axiosWithAuth().get('https://funtimes-dreamteam.herokuapp.com/api/rooms/')
             .then(res => {
                 console.log(res);
                 const roomStuff = res.data;

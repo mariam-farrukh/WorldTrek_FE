@@ -7,8 +7,9 @@ import RoomInfo from './roomInfo';
 import Controls from './control';
 
 import './game.scss'
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
-
+//adnan: finish this lol//
 const moveFuncN = (e) => {
     e.preventDefault()
     axios.post('https://lambda-mud-be.herokuapp.com/api/adv/move/', {direction: 'n'})
@@ -18,8 +19,36 @@ const moveFuncN = (e) => {
 
 }
 
-const Game = prop => {
 
+// const playRoom = () => {
+//     axiosWithAuth
+// }
+
+const Game = prop => {
+const [playInfo, setPlayerInfo] = useState(null)
+//     useEffect(() => {
+//         axios.get('https://funtimes-dreamteam.herokuapp.com/api/rooms/')
+//            .then(res => {
+//                console.log(res);
+//                const roomStuff = res.data;
+//                setRoomState(roomStuff);
+//            })
+//             .catch(err => {
+//                console.log(err)
+//            })
+//    },[])
+
+    useEffect(() => {
+        axiosWithAuth().get("https://funtimes-dreamteam.herokuapp.com/api/adv/init/")
+            .then(res => {
+                console.log(res)
+                setPlayerInfo(res.data)
+
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }, [])
     return (
         
         <div className="game-container">
@@ -27,9 +56,9 @@ const Game = prop => {
                 <GameMap />
             </div>
             <div className="side-panel">
-                <RoomInfo />
+                <RoomInfo player={playInfo}/>
                 <Controls />
-                 <LogOut />
+                <LogOut />
             </div>
         </div>
     )

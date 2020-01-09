@@ -17,7 +17,7 @@ const Login = props => {
         axios.post("https://funtimes-dreamteam.herokuapp.com/api-token-auth/", user)
             .then(res => {
                 console.log(res)
-                localStorage.setItem('key', res.data.key)
+                localStorage.setItem('token', res.data.token)
                 props.history.push("/game") //this should be the link to the game
             })
             .catch(err => console.log("Error with posting login", err));
