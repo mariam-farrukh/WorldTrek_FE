@@ -1,9 +1,6 @@
 import React from 'react';
 
-
-
 const LogOut = (props) => {
- console.log(props)
     return (
         <div onClick={() =>{localStorage.removeItem('token')
             props.history.push('/')}} className="LogOut">

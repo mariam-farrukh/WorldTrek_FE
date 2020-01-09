@@ -12,7 +12,7 @@ const Controls = props => {
     .catch(err => {
         console.log(err)
     })
-}
+  }
 
   return (
     <div className="controls">
