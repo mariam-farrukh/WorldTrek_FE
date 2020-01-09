@@ -1,6 +1,5 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
-import logo from './logo.svg';
 import Register from './components/Register';
 import Login from './components/Login';
 import Game from './components/game/game.js'

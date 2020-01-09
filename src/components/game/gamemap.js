@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
 import {axiosWithAuth} from '../utils/axiosWithAuth.js'
-import Konva from 'konva';
-import {Stage, Layer, Rect, Path, Line} from 'react-konva'
+import {Stage, Layer, Rect} from 'react-konva'
 
 // const User = ({userState}) => {
 //     return (
@@ -18,20 +16,25 @@ import {Stage, Layer, Rect, Path, Line} from 'react-konva'
 // }
 
 const GameMap = props => {
+    const { playerInfo , setPlayerInfo} = props;
     const [roomState, setRoomState] = useState();
     // const [userState, setUserState] = useState({currentroom})
 
     useEffect(() => {
          axiosWithAuth().get('https://funtimes-dreamteam.herokuapp.com/api/rooms/')
             .then(res => {
-                console.log(res);
-                const roomStuff = res.data;
-                setRoomState(roomStuff);
+                // console.log(res);
+                setRoomState(res.data);
             })
              .catch(err => {
                 console.log(err)
             })
     },[])
+
+    // useEffect(()=>{
+    //     if(playerInfo){
+    //     }
+    // },[playerInfo])
     // const RoomPaths = () => {
     //     const
     // }
@@ -51,6 +54,17 @@ const GameMap = props => {
         <Stage width={500} height={500} >
             <Layer>
                 {roomState && roomState.map((room)=>{
+                    if (room.id === props.playerInfo.roomID) {
+                        // console.log(props.playerInfo)
+                     return <Rect
+                        // points={pointList}
+                        x={room.x*50}
+                        y={room.y*50}
+                        width={20}
+                        height={20} 
+                        fill="blue"
+                    /> 
+                    }
                    return <Rect
                     x={room.x*50}
                     y={room.y*50}
@@ -60,12 +74,7 @@ const GameMap = props => {
                     shadowBlur={10}
                     />
                 })}
-                {/* <Rect
-                    // points={pointList}
-                    x={pointList.x}
-                    y={pointList.y} 
-                    fill="pink"
-                /> */}
+ 
             </Layer>
         </Stage>
         </div>

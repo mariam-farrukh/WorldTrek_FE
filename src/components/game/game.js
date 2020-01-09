@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react"
-import axios from "axios"
 
 import LogOut from './nav';
 import GameMap from './gamemap';
@@ -8,7 +7,6 @@ import Controls from './control';
 
 import './game.scss'
 import { axiosWithAuth } from "../utils/axiosWithAuth";
-import { set } from "ui-box/dist/cache";
 
 //adnan: finish this lol//
 // const moveFuncN = (e) => {
@@ -26,24 +24,24 @@ import { set } from "ui-box/dist/cache";
 // }
 
 const Game = () => {
-const [playInfo, setPlayerInfo] = useState(null)
+const [playerInfo, setPlayerInfo] = useState(null)
 
-    const moveFn = (something) => {
-        axiosWithAuth().post('https://funtimes-dreamteam.herokuapp.com/api/adv/move/', {direction: something})
-        .then(res => {
-            console.log(res)
-            //set the playinfo state...//
-            setPlayerInfo(res.data)
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    }
+    // const moveFn = (something) => {
+    //     axiosWithAuth().post('https://funtimes-dreamteam.herokuapp.com/api/adv/move/', {direction: something})
+    //     .then(res => {
+    //         console.log(res)
+    //         //set the playinfo state...//
+    //         setPlayerInfo(res.data)
+    //     })
+    //     .catch(err => {
+    //         console.log(err)
+    //     })
+    // }
 
     useEffect(() => {
         axiosWithAuth().get("https://funtimes-dreamteam.herokuapp.com/api/adv/init/")
             .then(res => {
-                console.log(res)
+                // console.log('Resonse from initial game load',res.data)
                 setPlayerInfo(res.data)
 
             })
@@ -55,11 +53,11 @@ const [playInfo, setPlayerInfo] = useState(null)
     return(
         <div className="game-container">
             <div className="game-map">
-                <GameMap />        
+                <GameMap playerInfo={playerInfo} setPlayerInfo={setPlayerInfo}/>        
             </div>
             <div className="side-panel">
-                <RoomInfo player={playInfo}/>
-                <Controls move={moveFn} />
+                <RoomInfo player={playerInfo} setPlayer={setPlayerInfo}/>
+                <Controls setPlayerInfo={setPlayerInfo} />
                 <LogOut />
             </div>
         </div>

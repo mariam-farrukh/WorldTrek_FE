@@ -18,7 +18,7 @@ const RegisterForm = props => {
         event.preventDefault();
         axios.post("https://funtimes-dreamteam.herokuapp.com/api/registration/", user)
             .then(res => {
-                console.log(user)
+                // console.log(user)
                 localStorage.setItem('key', res.data.key)
                 props.history.push("/game") //this should be the link to the game
             })
