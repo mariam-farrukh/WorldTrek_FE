@@ -23,7 +23,7 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 //     axiosWithAuth
 // }
 
-const Game = () => {
+const Game = (props) => {
 const [playerInfo, setPlayerInfo] = useState(null)
 
     // const moveFn = (something) => {
@@ -49,9 +49,7 @@ const [playerInfo, setPlayerInfo] = useState(null)
             })
         
     }, [])
-    useEffect(()=>{
-        console.log("State of playerInfo", playerInfo)
-    },[playerInfo])
+    console.log('looking for history',props)
     
     return(
         <div className="game-container">
@@ -61,7 +59,7 @@ const [playerInfo, setPlayerInfo] = useState(null)
             <div className="side-panel">
                 <RoomInfo player={playerInfo} setPlayer={setPlayerInfo}/>
                 <Controls setPlayerInfo={setPlayerInfo} />
-                <LogOut />
+                <LogOut history={props.history}/>
             </div>
         </div>
     )

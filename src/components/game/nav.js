@@ -1,10 +1,13 @@
 import React from 'react';
 
-const LogOut = () => {
 
+
+const LogOut = (props) => {
+ console.log(props)
     return (
-        <div className="LogOut">
-            <span className="button">Log out</span>
+        <div onClick={() =>{localStorage.removeItem('token')
+            props.history.push('/')}} className="LogOut">
+            <span  className="button">Log out</span>
         </div>
     )
 }
