@@ -18,8 +18,8 @@ const RegisterForm = props => {
         event.preventDefault();
         axios.post("https://funtimes-dreamteam.herokuapp.com/api/registration/", user)
             .then(res => {
-                localStorage.setItem('key', res.data.key)
-                props.history.push("/game") //this should be the link to the game
+                localStorage.setItem('token', res.data.token)
+                props.history.push("/") //this should be the link to the game
             })
             .catch(err => console.log("Error with posting login", err));
     };
