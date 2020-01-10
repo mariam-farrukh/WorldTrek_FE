@@ -84,8 +84,8 @@
                     color: #c1f6ed;
                     background-color: #02343c;
                     border: 1px solid #c1f6ed;
-                    width: 60px;
-                    height: 60px;
+                    width: 2em;
+                    height: 2em;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -96,6 +96,7 @@
                     background-color: #808080;
                     border: 1px solid black;
                     cursor: pointer;
+                    transition: 0.3s ease-in;
                 }
             }
             .LogOut{
@@ -104,12 +105,19 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                cursor: pointer;
                 .button{
                     background-color: #02343c;
+                    border: 1px solid #c1f6ed;
                     color: #c1f6ed;
                     padding: 10px 30px;
-                    
+                    cursor: pointer;
+                }
+                .button:hover{
+                    color: #000000;
+                    background-color: #808080;
+                    border: 1px solid black;
+                    cursor: pointer;
+                    transition: 0.3s ease-in;
                 }
             }
     }
