@@ -1,6 +1,6 @@
 # Frontend for MUD - CS Build Week 1
 
-Visit [WorldTrek](worldtrek.now.sh) to play the game
+Visit [WorldTrek](https://worldtrek.now.sh) to play the game
 
 ## Contributors
 
